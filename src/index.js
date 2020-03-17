@@ -170,7 +170,7 @@ class SmoothPinCodeInput extends Component {
                   cellText = mask;
                 } else if(!filled && isPlaceholderText) {
                   cellText = placeholder;
-                } else if (pinCodeChar) {
+                } else if (pinCodeChar && !password) {
                   cellText = pinCodeChar;
                 }
               }
@@ -205,7 +205,7 @@ class SmoothPinCodeInput extends Component {
                   </Text>}
 
                   {(!isCellText && !maskComponent) && placeholderComponent}
-                  {isCellText && maskComponent}
+                  {filled && maskComponent}
                 </Animatable.View>
               );
             })
