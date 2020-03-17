@@ -70,7 +70,7 @@ class SmoothPinCodeInput extends Component {
       onTextChange(code);
     }
     if (code.length === codeLength && onFulfill) {
-      onFulfill(code);
+      requestAnimationFrame(() => onFulfill(code));
     }
 
     // handle password mask
